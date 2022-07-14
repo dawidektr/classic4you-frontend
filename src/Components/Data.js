@@ -11,7 +11,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';

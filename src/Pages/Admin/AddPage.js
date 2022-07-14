@@ -9,10 +9,13 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addNewCar } from '../../features/cars/carsSlice';
 
 const AddPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [links, setLinks] = useState('');
@@ -33,6 +36,7 @@ const AddPage = () => {
         setName('');
         setDescription('');
         setLinks('');
+        navigate(`/admin`, { replace: true });
       } catch (err) {
         console.error('Failed to save the post', err);
       } finally {
